@@ -1,18 +1,16 @@
-from domain.control import PathMannanger
-
 if __name__ == '__main__' :
-    pathMannanger = PathMannanger.PathMannanger()
+    from domain.control import PathMannanger
+    pathMannanger = PathMannanger.PathMannanger(printStatus = True)
 
 import ArrowKey
 
 import Editor
-import Course
 
 import numpy as np
 
 print('editor api')
 
-editorName = 'editor'
+editorName = pathMannanger.apiName
 colors = {
     'black' : (0,0,0),
     'white' : (255,255,255),

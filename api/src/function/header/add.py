@@ -66,20 +66,20 @@ def makeBasicScript(event) :
     if event.application.session :
         audioExtension = 'mp3'
         imageExtension = 'png'
-        backwardButton = f'{dbOPEN_SQUARE_BRACKETS}92x765 172x840{dbCLOSE_SQUARE_BRACKETS}'
-        forwardButton = f'{dbOPEN_SQUARE_BRACKETS}1393x761 1500x844{dbCLOSE_SQUARE_BRACKETS}'
+        backwardButton = f'{db_OPEN_SQUARE_BRACKETS}92x765 172x840{db_CLOSE_SQUARE_BRACKETS}'
+        forwardButton = f'{db_OPEN_SQUARE_BRACKETS}1393x761 1500x844{db_CLOSE_SQUARE_BRACKETS}'
         audioNames = setting.getFileNames(f'{event.application.session.path}audio\\',audioExtension)
         imageNames = setting.getFileNames(f'{event.application.session.path}image\\',imageExtension)
         lessonScriptList = []
         for index in range(len(imageNames)) :
             scriptList = []
             if f'{index}' in audioNames :
-                scriptList.append(f'audio{dbCOLON}{index}')
-            script = dbOPEN_SQUARE_BRACKETS
+                scriptList.append(f'audio{db_COLON}{index}')
+            script = db_OPEN_SQUARE_BRACKETS
             for instruction in scriptList :
                 script += f'{instruction} '
-            script = f'{script.strip()}{dbCLOSE_SQUARE_BRACKETS}'
-            lessonScriptList.append(f'{dbPAGE}{dbCOLON}{index}{dbCOMA}{dbIMAGE}{dbCOLON}{imageNames[index]}{dbCOMA}{dbBACKWARD_BUTTON}{dbCOLON}{backwardButton}{dbCOMA}{dbFOWARD_BUTTON}{dbCOLON}{forwardButton}{dbCOMA}{dbPAGE_SCRIPT}{dbCOLON}{script}')
+            script = f'{script.strip()}{db_CLOSE_SQUARE_BRACKETS}'
+            lessonScriptList.append(f'{db_PAGE}{db_COLON}{index}{db_COMA}{db_IMAGE}{db_COLON}{imageNames[index]}{db_COMA}{db_BACKWARD_BUTTON}{db_COLON}{backwardButton}{db_COMA}{db_FOWARD_BUTTON}{db_COLON}{forwardButton}{db_COMA}{db_PAGE_SCRIPT}{db_COLON}{script}')
         lessonScriptPath = f'{event.application.session.path}{coursePathFunction.getLessonScriptName(event.application.session.path)}.{event.application.extension}'
         with open(lessonScriptPath,"w+",encoding="utf-8") as lessonScriptFile :
             lessonScriptFile.write('\n\n'.join(lessonScriptList))

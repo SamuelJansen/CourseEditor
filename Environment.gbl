@@ -1,0 +1,21 @@
+.\courses-env\Scripts\activate
+cd C:\Users\aula35\Projects\CourseEditor\api\src
+EditorApplication.py
+
+################################################################################
+
+.\courses-env\Scripts\activate
+cd C:\Users\Samuel Jansen\Projects\CourseEditor\api\src
+EditorApplication.py
+
+pip install virtualenv
+virtualenv --system-site-packages -p python3 ./venv
+.\venv\Scripts\activate
+pip install --upgrade pip
+pip list
+deactivate
+
+requeriments
+pip install numpy
+pip install pygame
+pip install virtualenv

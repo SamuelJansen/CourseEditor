@@ -12,13 +12,13 @@ class EditorSession(Session.Session):
         Session.Session.__init__(self,desk)
 
         self.pathMannanger = self.application.pathMannanger
-        self.path = f'{self.pathMannanger.getApiModulePath(self.pathMannanger.COURSE)}resourse\\modules\\{navigationHistory}'
+        self.path = f'''{self.pathMannanger.getApiPath('Courses')}resourse\\modules\\{navigationHistory}'''
         self.deskItemSize = [
             self.desk.size[0] // self.desk.itemsPerLine,
             int(self.desk.size[0] // self.desk.itemsPerLine / EditorSession.GOLDEN_RATIO)
         ]
 
     def save(self):
-        Message.Message(self.desk,f'{self.name}.save()',
+        Message.Message(self.desk,f'save_message',
             fontSize = 18
         )
