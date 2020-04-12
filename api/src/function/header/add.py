@@ -1,7 +1,7 @@
 import pygame as pg
 
 import MenuAccessEvent, MenuNavigationEvent, Message
-import setting, imageFunction, textFunction
+import settingFunction, imageFunction, textFunction
 
 import coursePathFunction
 
@@ -48,7 +48,7 @@ def generateThumbs(event) :
     if event.application.session :
         deskItemSize = event.application.session.deskItemSize
         imageExtension = 'png'
-        imageNames = setting.getFileNames(f'{event.application.session.path}image\\',imageExtension)
+        imageNames = settingFunction.getFileNames(f'{event.application.session.path}image\\',imageExtension)
         padding = event.application.session.desk.padding
         for imageName in imageNames :
             imagePath = f'{event.application.session.path}image\\{imageName}.{imageExtension}'
@@ -68,8 +68,8 @@ def makeBasicScript(event) :
         imageExtension = 'png'
         backwardButton = f'{db_OPEN_SQUARE_BRACKETS}92x765 172x840{db_CLOSE_SQUARE_BRACKETS}'
         forwardButton = f'{db_OPEN_SQUARE_BRACKETS}1393x761 1500x844{db_CLOSE_SQUARE_BRACKETS}'
-        audioNames = setting.getFileNames(f'{event.application.session.path}audio\\',audioExtension)
-        imageNames = setting.getFileNames(f'{event.application.session.path}image\\',imageExtension)
+        audioNames = settingFunction.getFileNames(f'{event.application.session.path}audio\\',audioExtension)
+        imageNames = settingFunction.getFileNames(f'{event.application.session.path}image\\',imageExtension)
         lessonScriptList = []
         for index in range(len(imageNames)) :
             scriptList = []

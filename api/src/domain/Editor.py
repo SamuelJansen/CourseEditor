@@ -1,5 +1,5 @@
 import Application, Header, EditorSession
-import surfaceFunction, headerFunction, setting, applicationFunction
+import surfaceFunction, headerFunction, settingFunction, applicationFunction
 
 import ItemDto
 import exit, openModule, closeModule, save, add, launch, update, unlaunch
@@ -12,25 +12,22 @@ class Editor(Application.Application):
 
         Application.Application.__init__(self,*args,**kargs)
 
-        headerName = headerFunction.Attribute.NAME
         headerPosition  = [0,0]
         headerSize = ['100%',20]
         headerFather = self.getFloor()
-        priority = applicationFunction.Priority.HIGHT
 
         headerItems = [
-            ItemDto.ItemDto('exit',onLeftClick=exit.exit,priority=priority),
-            ItemDto.ItemDto('openModule',onLeftClick=openModule.openModule,priority=priority),
-            ItemDto.ItemDto('closeModule',onLeftClick=closeModule.closeModule,priority=priority),
-            ItemDto.ItemDto('save',onLeftClick=save.save,priority=priority),
-            ItemDto.ItemDto('add',onLeftClick=add.add,priority=priority),
-            ItemDto.ItemDto('launch',onLeftClick=launch.launch,priority=priority),
-            ItemDto.ItemDto('update',onLeftClick=update.update,priority=priority),
-            ItemDto.ItemDto('unlaunch',onLeftClick=unlaunch.unlaunch,priority=priority)
+            ItemDto.ItemDto('exit',onLeftClick=exit.exit),
+            ItemDto.ItemDto('openModule',onLeftClick=openModule.openModule),
+            ItemDto.ItemDto('closeModule',onLeftClick=closeModule.closeModule),
+            ItemDto.ItemDto('save',onLeftClick=save.save),
+            ItemDto.ItemDto('add',onLeftClick=add.add),
+            ItemDto.ItemDto('launch',onLeftClick=launch.launch),
+            ItemDto.ItemDto('update',onLeftClick=update.update),
+            ItemDto.ItemDto('unlaunch',onLeftClick=unlaunch.unlaunch)
         ]
 
         Header.Header(
-            headerName,
             headerPosition,
             headerSize,
             headerFather,
