@@ -11,8 +11,8 @@ class EditorSession(Session.Session):
 
         Session.Session.__init__(self,desk)
 
-        self.pathMannanger = self.application.pathMannanger
-        self.path = f'''{self.pathMannanger.getApiPath('Courses')}resource\\modules\\{navigationHistory}'''
+        self.globals = self.application.globals
+        self.path = f'''{self.globals.getApiPath('Courses')}resource\\modules\\{navigationHistory}'''
         self.deskItemSize = [
             self.desk.size[0] // self.desk.itemsPerLine,
             int(self.desk.size[0] // self.desk.itemsPerLine / EditorSession.GOLDEN_RATIO)

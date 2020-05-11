@@ -7,8 +7,8 @@ def pageSelection(event) :
 
     event.application.session.updatePage(pages.SELECTION_PAGE)
 
-    pathMannanger = event.application.pathMannanger
-    lessonScriptPath = f'''{pathMannanger.getApiPath('Courses')}resource\\modules\\{event.navigationHistory}'''
+    globals = event.application.globals
+    lessonScriptPath = f'''{globals.getApiPath('Courses')}resource\\modules\\{event.navigationHistory}'''
     pageNames = event.application.repository.getPageNamesFromLessonScriptPath(lessonScriptPath)
     imagePath = f'{lessonScriptPath}image\\'
     audioPath = None

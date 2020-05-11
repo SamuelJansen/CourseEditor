@@ -4,8 +4,8 @@ import pageSelection, textFunction
 
 def openModule(event) :
 
-    pathMannanger = event.application.pathMannanger
-    itemsPathTree = pathMannanger.getPathTreeFromPath(f'''{pathMannanger.getApiPath('Courses')}resource\\modules\\''')
+    globals = event.application.globals
+    itemsPathTree = globals.getPathTreeFromPath(f'''{globals.getApiPath('Courses')}resource\\modules\\''')
 
     MenuAccessEvent.MenuAccessEvent(
         event.object,

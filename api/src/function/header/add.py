@@ -14,7 +14,7 @@ def add(event) :
 
     if event.application.session :
 
-        pathMannanger = event.application.pathMannanger
+        globals = event.application.globals
         itemsPathTree = {
             GENERATE_THUMBS : {},
             MAKE_BASIC_SCRIPT : {}
